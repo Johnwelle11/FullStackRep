@@ -27,13 +27,13 @@ phone_number TEXT,
 email text
 );
 
-INSERT INTO car_owners ( name, phone_number, email ) VALUES ( 'Hog', '323-456-2345', 'hog@gmail.com' );
-INSERT INTO car_owners ( name, phone_number, email ) VALUES ( 'Pig', '323-675-2345', 'pig@gmail.com' );
-INSERT INTO car_owners ( name, phone_number, email ) VALUES ( 'Cow', '323-434-6478', 'cow@gmail.com' );
-INSERT INTO car_owners ( name, phone_number, email ) VALUES ( 'Milk', '323-434-1234', 'milk@gmail.com' );
-INSERT INTO car_owners ( name, phone_number, email ) VALUES ( 'Cheese', '546-434-0876', 'cheese@gmail.com' );
-INSERT INTO car_owners ( name, phone_number, email ) VALUES ( 'Bread', '323-867-6867', 'bread@gmail.com' );
-INSERT INTO car_owners ( name, phone_number, email ) VALUES ( 'Tummy', '667-456-7890', 'tummy@gmail.com' );
+INSERT INTO owners ( name, phone_number, email ) VALUES ( 'Hog', '323-456-2345', 'hog@gmail.com' );
+INSERT INTO owners ( name, phone_number, email ) VALUES ( 'Pig', '323-675-2345', 'pig@gmail.com' );
+INSERT INTO owners ( name, phone_number, email ) VALUES ( 'Cow', '323-434-6478', 'cow@gmail.com' );
+INSERT INTO owners ( name, phone_number, email ) VALUES ( 'Milk', '323-434-1234', 'milk@gmail.com' );
+INSERT INTO owners ( name, phone_number, email ) VALUES ( 'Cheese', '546-434-0876', 'cheese@gmail.com' );
+INSERT INTO owners ( name, phone_number, email ) VALUES ( 'Bread', '323-867-6867', 'bread@gmail.com' );
+INSERT INTO owners ( name, phone_number, email ) VALUES ( 'Tummy', '667-456-7890', 'tummy@gmail.com' );
 
 CREATE TABLE car_owners (
 user_id INTEGER REFERENCES owner(user_id),
