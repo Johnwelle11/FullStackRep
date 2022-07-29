@@ -1,0 +1,35 @@
+{
+  "name": "car-owners",
+  "version": "0.1.0",
+  "description": "A small server app to demonstrate CRUD over an HTTP API",
+  "main": "restServer.js",
+  "type": "module",
+  "scripts": {
+    "start": "node restServer.js",
+    "test": "mocha"
+  },
+  "keywords": [
+    "cars",
+    "store",
+    "crud",
+    "http"
+  ],
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.6",
+    "nodemon": "^1.19.4",
+    "pg": "^8.7.3",
+    "save": "^2.5.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.6.2",
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "rewire": "^2.5.2",
+    "supertest": "^2.0.0"
+  }
+}
