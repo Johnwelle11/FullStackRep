@@ -18,27 +18,25 @@ app.use(cors());
 app.use(morgan("combined"));
 
 const pool = new pg.Pool({
-  //   connectionString: process.env.DATABASE_URL,
-  //   ...PORT(
-  //     process.env.NODE_ENV === "production"
-  //       ? {
-  //           ssl: {
-  //             rejectUnauthorized: false,
-  //           },
-  //         }
-  //       : {}
-  //   ),
-  database: "cars",
+  connectionString: process.env.DATABASE_URL,
+  ...(process.env.NODE_ENV === "production"
+    ? {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      }
+    : {}),
+  //   database: "cars",
   // or database: "FullStackRep"  ??
   // and you actually don't even need the databse specified here, the environmental varibles will set it
 });
 
-app.get("/", (req, res) => {
-  readFile("public/index/html", "utf-8").then((string) => {
-    res.type("javascript");
-    res.send(string);
-  });
-});
+// app.get("/", (req, res) => {
+//   readFile("public/index/html", "utf-8").then((string) => {
+//     res.type("javascript");
+//     res.send(string);
+//   });
+// });
 
 app.get("/cars", (req, res) => {
   pool.query("SELECT * FROM cars").then((data) => {
