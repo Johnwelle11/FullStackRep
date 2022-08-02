@@ -26,9 +26,6 @@ const pool = new pg.Pool({
         },
       }
     : {}),
-  //   database: "cars",
-  // or database: "FullStackRep"  ??
-  // and you actually don't even need the databse specified here, the environmental varibles will set it
 });
 
 // app.get("/", (req, res) => {
@@ -55,6 +52,30 @@ app.get("/cars/:id", (req, res) => {
     }
   });
 });
+
+// app.get("/cars/:type", (req, res) => {
+//   const id = req.params.type;
+//   pool.query(`SELECT * FROM cars WHERE id = $1;`, [type]).then((data) => {
+//     const car = data.rows[0];
+//     if (car) {
+//       res.send(car);
+//     } else {
+//       res.sendStatus(404);
+//     }
+//   });
+// });
+
+// app.get("/cars/:name", (req, res) => {
+//   const id = req.params.name;
+//   pool.query(`SELECT * FROM cars WHERE id = $1;`, [name]).then((data) => {
+//     const car = data.rows[0];
+//     if (car) {
+//       res.send(car);
+//     } else {
+//       res.sendStatus(404);
+//     }
+//   });
+// });
 
 app.delete("/cars/:id", (req, res) => {
   const id = req.params.id;

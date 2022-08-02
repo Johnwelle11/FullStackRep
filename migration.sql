@@ -3,7 +3,7 @@ DROP TABLE if EXISTS car_owners;
 DROP TABLE IF EXISTS properties;   
 
 CREATE TABLE cars (
-car_id SERIAL PRIMARY KEY,
+id SERIAL PRIMARY KEY,
 name TEXT,
 type TEXT,
 model TEXT,
@@ -39,4 +39,5 @@ CREATE TABLE car_owners (
 user_id INTEGER REFERENCES owner(user_id),
 car_id INTEGER REFERENCES cars(car_id),
 );
+SELECT owner.name, owner.email, owner.phone_number, cars.model, cars.make, cars.year, cars.miles, cars.description, cars.price FROM cars  INNER JOIN owner ON cars.owner_id=owner.id
 

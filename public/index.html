@@ -1,15 +1,54 @@
-<!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>car collections></title>
-    <script defer src="app.js"></script>
-    <link href="beauty.css" rel="stylesheet" />
-  </head>
-  <body>
-    <div>
-      <div class="container"></div>
-      <p class="newcontainer"></p>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  <script defer src="app.js"></script>
+  <title>Car Collections</title>
+</head>
+<body>
+  <div id="main">
+    <div id="header">
+      <h1>Car Collections</h1>
     </div>
-  </body>
+     <body>
+      <div>
+      <a type="submit" class="register" href="anotherPage.html"> Create Account</a>
+      </div> 
+      <!-- <a onclick="document.getElementById('id01').style.display='block'">Sign Up</a> -->
+    <!-- <form method="POST" action="anotherPage.html">
+     <input type="text"/>
+     <input type="submit"/>
+    </form> -->
+    <form id="user-form">
+      <input type="text" name='search'>
+      <button type ="submit" id="submit">Search</button>
+    </form>
+    <div id="results">
+      <span class="result-id">
+        <h3 class="car-name">C'mon man</h3>
+        <!-- <img class="card-image" src="https://images.pexels.com/photos/1545743/pexels-photo-1545743.jpeg?cs=srgb&dl=pexels-yurii-hlei-1545743.jpg&fm=jpg"></ul> -->
+        <h2 class="car-type"></h2>
+        <div class="car-model">
+          <em>Summary:</em>
+          <p>
+            <b>JOE</b> I'm Joe
+          </p>
+        </div>
+      </span>
+      <span class="result-id">
+        <h3 class="car-name">Car Name</h3>
+        <!-- <img class="card-image" src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y2Fyc3xlbnwwfHwwfHw%3D&w=1000&q=80"></ul> -->
+        <h2 class="container"></h2>
+        <div class="newcontainer">
+          <em>Summary:</em>
+          <p>
+            <b>Hey! </b> This car is not yours and will never be available.
+          </p>
+        </div>
+      </span>
+    </div>
+  </div>
+</body>
 </html>
