@@ -53,6 +53,36 @@ app.get("/cars/:id", (req, res) => {
   });
 });
 
+app.get("/car_owners", (req, res) => {
+  pool.query("SELECT * FROM car_owners").then((data) => {
+    res.send(data.rows);
+  });
+});
+
+app.get("/car_owners/:id", (req, res) => {
+  const id = req.params.id;
+  pool.query(`SELECT * FROM car_owners WHERE id = $1;`, [id]).then((data) => {
+    const owners = data.rows[0];
+    if (owners) {
+      res.send(owners);
+    } else {
+      res.sendStatus(404);
+    }
+  });
+});
+
+app.post("/car_owners", (req, res) => {
+  const { name, phone_number, email } = req.body;
+  pool
+    .query(
+      "INSERT INTO car_owners (name, phone_number, email) VALUES ($1, $2, $3) RETURNING *",
+      [name, phone_number, email]
+    )
+    .then((result) => {
+      res.send(result.rows[0]);
+    });
+});
+
 // app.get("/cars/:type", (req, res) => {
 //   const id = req.params.type;
 //   pool.query(`SELECT * FROM cars WHERE id = $1;`, [type]).then((data) => {
